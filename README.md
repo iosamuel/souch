@@ -4,9 +4,9 @@ Simple client interface for handle CouchDB Database from NodeJS with some utilit
 
 ## How to use
 
-	var CouchDB = require('ouch');
+	var CouchDB = require('souch');
 
-	var db = new CouchDB('crud', {
+	var db = new CouchDB('mydb', {
 		host: 'localhost', // optional. Default to 'localhost'
 		port: 5984, // optional. Default to 5984
 		user: 'user', // optional
