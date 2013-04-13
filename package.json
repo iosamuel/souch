@@ -1,0 +1,10 @@
+{
+  "name": "souch",
+  "version": "0.0.1",
+  "description": "Simple CouchDB Client for NodeJS",
+  "main": "souch.js",
+  "author": {
+    "name": "Samuel Burbano Ramos - @samuelb1311"
+  },
+  "license": "BSD"
+}
