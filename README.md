@@ -59,9 +59,9 @@ Example of CouchDB docs in your DB:
 
 Example of connection with credentials to a restricted database and the preparation to use docs, in this case with the field name of 'type' (default) and the value of 'product', as you can see up here and prepare to use a doc in these case with a diferent field name and value than the default (type).
 
-	var CouchDB = require('ouch');
+	var CouchDB = require('souch');
 
-	var db = new CouchDB('crud', {
+	var db = new CouchDB('mydb', {
 		user: 'admin',
 		passwd: 'admin123'
 	});
