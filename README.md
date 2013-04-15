@@ -142,7 +142,7 @@ Here are some use that you can do with these methods:
 		startkey:'["?\u9999"]'.format('o'), // we use format() to do clean and escalable code
 		endkey:'["?"]'.format('o')
 	};
-	db.design('productos', { type:'view', name:'all', params:options }, function(results){
+	db.design('products', { type:'view', name:'all', params:options }, function(results){
 		results.rows.unique(); // in the case that the filter for some case like an search algoritm in the CouchDB side return duplicate results we can use unique() for reduce the array to unique's ID
 		for (var i=0; i<results.rows.length; i++){
 			console.log(results.rows[i].name);
