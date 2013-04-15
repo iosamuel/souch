@@ -1,4 +1,4 @@
-var SouchDB = require('./lib/souch.db'),
+var SouchDB = require('./lib/souch.db').DB,
 	crypto = require('crypto');
 
 Array.prototype.unique = function() {
