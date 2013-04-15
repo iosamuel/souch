@@ -1,5 +1,4 @@
-var SouchDB = require('./lib/souch.db').DB,
-	crypto = require('crypto');
+var crypto = require('crypto');
 
 Array.prototype.unique = function() {
 	var n = [];
@@ -22,4 +21,4 @@ String.prototype.hash = function(t) {
 	return crypto.createHash(t).update(this.toString()).digest('hex');
 };
 
-module.exports = SouchDB;
+module.exports = require('./lib/souch.db');
