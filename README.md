@@ -92,7 +92,7 @@ Example of connection with credentials to a restricted database and the preparat
 		'name': 'new orange',
 		'price': 2
 	}; // pass the data to modify in the doc, like CouchDB say, have to send all the new data and the old data, of course Souch handle for you the _rev id, so you don't have to worry about that
-	products.post('orangeId123', post, function(result){
+	products.put('orangeId123', post, function(result){
 		console.log(result); // in these case 'result' is the same JSON object that CouchDB send to POST
 	}); // here you pass for the first argument, the ID for the doc to modify, the data to modify and of course, the callback to take the results from couchdb
 
