@@ -4,7 +4,7 @@ Array.prototype.unique = function() {
 	var n = [];
 	for (var i=0; i<this.length; i++){
 		var c = this[i].id;
-		if (n.indexOf(c) > -1) { this.splice(i,1); i--; continue; }
+		if (n.indexOf(c) >= 0) { this.splice(i,1); i--; continue; }
 		n.push(c);
 	}
 };

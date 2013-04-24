@@ -2,6 +2,8 @@
 
 Simple client interface for handle CouchDB Database from NodeJS with some utilities that you can use.
 
+You can see an example using Souch in [http://github.com/samuelb1311/nodecrud](http://github.com/samuelb1311/nodecrud)
+
 ## How to use
 
 	var CouchDB = require('souch');
@@ -111,7 +113,7 @@ An example call to a map view in an url like this: /database/_design/products/_v
 	var options = {
 		descending: true,
 	};
-	db.design('products', { type:'view', name:'all', params:options }, function(results){
+	db.design('products', { type:'view', name:'all', params:options }, function(results){ // type is optional. Default to 'view'
 		for (var i=0; i<results.rows.length; i++){
 			console.log(results.rows[i].name);
 		}
@@ -124,7 +126,7 @@ For use things like startkey and endkey and some other parameter use params in t
 		startkey:'["?\u9999"]'.format('o'),
 		endkey:'["?"]'.format('o')
 	};
-	db.design('products', { type:'view', name:'all', params:options }, function(results){
+	db.design('products', { name:'all', params:options }, function(results){ // here we use the default value of 'type' that is 'view'
 		for (var i=0; i<results.rows.length; i++){
 			console.log(results.rows[i].name);
 		}
@@ -142,7 +144,7 @@ Here are some use that you can do with these methods:
 		startkey:'["?\u9999"]'.format('o'), // we use format() to do clean and escalable code
 		endkey:'["?"]'.format('o')
 	};
-	db.design('products', { type:'view', name:'all', params:options }, function(results){
+	db.design('products', { name:'all', params:options }, function(results){
 		results.rows.unique(); // in the case that the filter for some case like an search algoritm in the CouchDB side return duplicate results we can use unique() for reduce the array to unique's ID
 		for (var i=0; i<results.rows.length; i++){
 			console.log(results.rows[i].name);
