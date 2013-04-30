@@ -2,7 +2,7 @@
 
 Simple client interface for handle CouchDB Database from NodeJS with some utilities that you can use.
 
-You can see an example using Souch in [http://github.com/samuelb1311/nodecrud](http://github.com/samuelb1311/nodecrud)
+You can see an example using Souch in [http://github.com/iosamuel/nodecrud](http://github.com/iosamuel/nodecrud)
 
 ## How to use
 
@@ -151,7 +151,7 @@ Here are some use that you can do with these methods:
 		}
 	});
 
-	db.get('someID', function(result){
+	products.get('someID', function(result){
 		if ('somepasswordinsha1'.hash('sha1') == result.password){ // here we use hash() to encrypt the password, see the api docs for crypto module in the page of nodejs to see the types of hash that support.
 			console.log('Welcome!');
 		}
@@ -160,4 +160,4 @@ Here are some use that you can do with these methods:
 
 ## Author
 ---------
-Samuel Burbano Ramos - @samuelb1311
+Samuel Burbano Ramos - @iosamuel

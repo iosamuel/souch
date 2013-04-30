@@ -4,7 +4,7 @@
   "description": "Simple CouchDB Client for NodeJS",
   "main": "index.js",
   "author": {
-    "name": "Samuel Burbano Ramos - @samuelb1311"
+    "name": "Samuel Burbano Ramos - @iosamuel"
   },
   "license": "BSD"
 }
