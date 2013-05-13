@@ -98,6 +98,11 @@ Example of connection with credentials to a restricted database and the preparat
 		console.log(result); // in these case 'result' is the same JSON object that CouchDB send to POST
 	}); // here you pass for the first argument, the ID for the doc to modify, the data to modify and of course, the callback to take the results from couchdb
 
+	// or you can insert with PUT
+	products.put('myNewId', post, true, function(result){ // the third argument tell that this info will be inserted in place of modified.
+		console.log(result);
+	});
+
 ### DELETE
 
 	products.delete('orangeId123', function(result){
