@@ -1,24 +1,26 @@
 var crypto = require('crypto');
 
-Array.prototype.unique = function() {
-	var n = [];
-	for (var i=0; i<this.length; i++){
-		var c = this[i].id;
-		if (n.indexOf(c) >= 0) { this.splice(i,1); i--; continue; }
+module.exports = require('./lib/souch.db');
+
+module.exports.unique = function(a, f) {
+	var n = [],
+		f = f || 'id';
+	for (var i=0; i<a.length; i++){
+		var c = a[i][f];
+		if (n.indexOf(c) >= 0) { a.splice(i,1); i--; continue; }
 		n.push(c);
 	}
-};
+	return a;
+}
 
-String.prototype.format = function() {
-	var t = this.toString();
-	for (var i=0; i<arguments.length; i++){
+module.exports.format = function(s){
+	var t = s.toString();
+	for (var i=1; i<=arguments.length; i++){
 		t = t.replace('?', arguments[i]);
 	}
 	return t;
-};
+}
 
-String.prototype.hash = function(t) {
-	return crypto.createHash(t).update(this.toString()).digest('hex');
+module.exports.hash = function(s, t) {
+	return crypto.createHash(t).update(s.toString()).digest('hex');
 };
-
-module.exports = require('./lib/souch.db');
